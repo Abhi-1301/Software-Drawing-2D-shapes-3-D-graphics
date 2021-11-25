@@ -14,6 +14,8 @@ In this project, we are drawing 2D Shapes such as Squares, Circles, Stars etc al
 
 * Java
 * Swing 
+* Java 3D
+* Java Media
 
 ------------------------------------------------------------------------------------------------
 
