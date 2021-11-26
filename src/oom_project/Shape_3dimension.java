@@ -95,38 +95,40 @@ public class Shape_3dimension extends Shape_Generator {
 		}
 		else if(index==1)
 		{
+			lightColor = new Color3f(1f, 1f, 1f);
 			tGroup.addChild(shape.sphere);
 		}
 		else if(index==2)
-		{
+		{	
+			lightColor = new Color3f(0.0f, 1.0f, 1f);
 			tGroup.addChild(shape.cylinder);
 		}
 		else if(index==3)
 		{
+			lightColor = new Color3f(1f, 0f, 0f);
 			tGroup.addChild(shape.cone);
 		}
 		
-	lightColor = new Color3f(1f, 1f, 1f);
         lightDirection = new Vector3f(-1, -1, -1);
         bounds = new BoundingSphere(new Point3d(0, 0, 0), 100);
         light = new DirectionalLight(lightColor, lightDirection);
         light.setInfluencingBounds(bounds);
         group.addChild(light);
         
-        spinAlpha = new Alpha(-1, 10000);
+        spinAlpha = new Alpha(-1, 20000);
         spin = new RotationInterpolator(spinAlpha, tGroup);
         spin.setSchedulingBounds(new BoundingSphere(new Point3d(), 0));
         if(flag==true)
         {
         	tGroup.addChild(spin);
         	universe.getViewingPlatform().setNominalViewingTransform();
-            universe.getViewer().getView().setBackClipDistance(100.0);
+            universe.getViewer().getView().setBackClipDistance(10.0);
             universe.addBranchGraph(group);
             
             this.add(canvas);
         }else {
         	universe.getViewingPlatform().setNominalViewingTransform();
-            universe.getViewer().getView().setBackClipDistance(100.0);
+            universe.getViewer().getView().setBackClipDistance(10.0);
             universe.addBranchGraph(group);
             
             this.add(canvas);
