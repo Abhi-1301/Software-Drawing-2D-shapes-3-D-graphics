@@ -62,11 +62,16 @@ public class main {
 					}
 					
 					int index2D=dialogBox.type(shape,"Choose a shape");
-					Shape_2dimension make2d=new Shape_2dimension(index2D);
-					frame.add(make2d);
+					if(index2D>=0&&index2D<6)
+					{
+						Shape_2dimension make2d=new Shape_2dimension(index2D);
+						frame.add(make2d);
+					}else {
+						System.exit(0);
+					}
 					
 				}
-				else {
+				else if(index==1) {
 					
 					shape=new String[list.shapes3D.size()];
 					
@@ -76,16 +81,24 @@ public class main {
 					}
 					
 					int index3D=dialogBox.type(shape,"Choose a shape");
-					if(dialogBox.ques()==JOptionPane.NO_OPTION)
+					if(index3D>=0&&index3D<4)
 					{
-						Shape_3dimension make3d=new Shape_3dimension(index3D,false);
-						frame.add(make3d);
+						if(dialogBox.ques()==JOptionPane.NO_OPTION)
+						{
+							Shape_3dimension make3d=new Shape_3dimension(index3D,false);
+							frame.add(make3d);
+						}
+						else
+						{
+							Shape_3dimension make3d=new Shape_3dimension(index3D,true);
+							frame.add(make3d);
+						}
+					}else {
+						System.exit(0);
 					}
-					else
-					{
-						Shape_3dimension make3d=new Shape_3dimension(index3D,true);
-						frame.add(make3d);
-					}
+				}
+				else {
+					System.exit(0);
 				}
 			}
 			else {
