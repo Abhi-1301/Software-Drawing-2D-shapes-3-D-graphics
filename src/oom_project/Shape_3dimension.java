@@ -106,8 +106,8 @@ public class Shape_3dimension extends Shape_Generator {
 			tGroup.addChild(shape.cone);
 		}
 		
-		lightColor = new Color3f(0.0f, 12.0f, 2.0f);
-        lightDirection = new Vector3f(0, -5, -15);
+	lightColor = new Color3f(1f, 1f, 1f);
+        lightDirection = new Vector3f(-1, -1, -1);
         bounds = new BoundingSphere(new Point3d(0, 0, 0), 100);
         light = new DirectionalLight(lightColor, lightDirection);
         light.setInfluencingBounds(bounds);
